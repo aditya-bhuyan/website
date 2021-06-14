@@ -253,7 +253,15 @@ control-plane node or a node that has the kubeconfig credentials:
 ```bash
 kubectl apply -f <add-on.yaml>
 ```
-
+> To Install **Weave** use the below command.
+```sh
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+```
+> To install **Calico** use the below command.
+```sh
+curl https://docs.projectcalico.org/manifests/calico.yaml -O
+kubectl apply -f calico.yaml
+```
 You can install only one Pod network per cluster.
 
 Once a Pod network has been installed, you can confirm that it is working by
